@@ -40,16 +40,20 @@ const renderer = new THREE.WebGLRenderer({
 renderer.shadowMap.enabled = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+camera.position.z = 1;
+			camera.position.y = -50;
+
+			camera.rotation.x = 1.16;
+			camera.rotation.y = 10.12;
+			camera.rotation.z = 0.27;
 
 
 //orbit추가 카메라 이후에 등장
-const orbitControls = new OrbitControls(camera, renderer.domElement);
-	orbitControls.update();
-	// orbitControls.minDistance = 0;
-	// orbitControls.maxDistance = 3.0;
-	// orbitControls.maxPolarAngle = 2.2;   //=3.14/2
-	 //orbitControls.maxPolarAngle = Math.PI / 2;   //=3.14/2
-
+const controls = new OrbitControls(camera, renderer.domElement);
+	controls.update();
+	controls.maxPolarAngle = 5
+  controls.enableDamping = true;
+  controls.update();
    
 			
 
