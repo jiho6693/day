@@ -5,12 +5,6 @@ import { BackSide } from 'three';
 // import { DirectionalLight } from 'three';
 // import { OBJLoader } from 'OBJLoader';
 
-const apiKey = "2fcd83828c7a6dd5b3be29bc0b6fdd9c"
-let lat = "41.825226"; 
-let lon = "-71.418884";
-
-const url = 'https://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon=' + lon +'&units=imperial&appid='+ apiKey +'';
-
 
 
 const raycaster = new THREE.Raycaster();
@@ -56,54 +50,7 @@ const orbitControls = new OrbitControls(camera, renderer.domElement);
 	// orbitControls.maxPolarAngle = 2.2;   //=3.14/2
 	 //orbitControls.maxPolarAngle = Math.PI / 2;   //=3.14/2
 
-   const skyMaterialArray_night = []
-      const night_ft = new THREE.TextureLoader().load('../ex-12/kenon_star_ft.jpg')
-      const night_bk = new THREE.TextureLoader().load('../ex-12/kenon_star_bk.jpg') //
-      const night_up = new THREE.TextureLoader().load('../ex-12/kenon_star_up.jpg') //
-      const night_dn = new THREE.TextureLoader().load('../ex-12/kenon_star_dn.jpg') //
-      const night_rt = new THREE.TextureLoader().load('../ex-12/kenon_star_rt.jpg') //
-      const night_lf = new THREE.TextureLoader().load('../ex-12/kenon_star_lf.jpg')
-
-      skyMaterialArray_night.push(
-        new THREE.MeshStandardMaterial({
-          map: night_ft,
-        })
-      )
-      skyMaterialArray_night.push(
-        new THREE.MeshStandardMaterial({
-          map: night_bk,
-        })
-      )
-      skyMaterialArray_night.push(
-        new THREE.MeshStandardMaterial({
-          map: night_up,
-        })
-      )
-      skyMaterialArray_night.push(
-        new THREE.MeshStandardMaterial({
-          map: night_dn,
-        })
-      )
-      skyMaterialArray_night.push(
-        new THREE.MeshStandardMaterial({
-          map: night_rt,
-        })
-      )
-      skyMaterialArray_night.push(
-        new THREE.MeshStandardMaterial({
-          map: night_lf,
-        })
-      )
-
-      // 반복문
-      for (let i = 0; i < 6; i++){
-        skyMaterialArray_night[i].side = THREE.BackSide
-      }
-
-      const skyGeometry01= new THREE.BoxGeometry( 1000,1000,1000 );
-			// const skyMaterial01 = new THREE.MeshBasicMaterial( { color: 0x333333 } );
-			const night = new THREE.Mesh( skyGeometry01, skyMaterialArray_night );
-			
+   
 			
 
 
@@ -527,9 +474,8 @@ const starGeo = new THREE.BufferGeometry ()
 const fogcolor = 0xFFFFFF;
 const fogdensity = 0.0;
 
-//wether if
-scene.add( cube );
-      
+
+ scene.add( cube );
     
 
   function animate() {
