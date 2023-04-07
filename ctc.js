@@ -14,7 +14,7 @@ const pointer = new THREE.Vector2();
 
 //장면추가
 const scene = new THREE.Scene()
-scene.background = new THREE.Color(0xEEEEEE); 
+scene.background = new THREE.Color(0x000000); 
 
 const modelContainer = new THREE.Group();
 scene.add(modelContainer);
@@ -55,12 +55,12 @@ const orbitControls = new OrbitControls(camera, renderer.domElement);
 
 
 	 const skyMaterialArray = []
-      const texture_ft = new THREE.TextureLoader().load('../ex-12/posx.jpg')
-      const texture_bk = new THREE.TextureLoader().load('../ex-12/negx.jpg') //
-      const texture_up = new THREE.TextureLoader().load('../ex-12/posy.jpg') //
-      const texture_dn = new THREE.TextureLoader().load('../ex-12/negy.jpg') //
-      const texture_rt = new THREE.TextureLoader().load('../ex-12/posz.jpg') //
-      const texture_lf = new THREE.TextureLoader().load('../ex-12/negz.jpg')
+      const texture_ft = new THREE.TextureLoader().load('./ex-12/posx.jpg')
+      const texture_bk = new THREE.TextureLoader().load('./ex-12/negx.jpg') //
+      const texture_up = new THREE.TextureLoader().load('./ex-12/posy.jpg') //
+      const texture_dn = new THREE.TextureLoader().load('./ex-12/negy.jpg') //
+      const texture_rt = new THREE.TextureLoader().load('./ex-12/posz.jpg') //
+      const texture_lf = new THREE.TextureLoader().load('./ex-12/negz.jpg')
 
       skyMaterialArray.push(
         new THREE.MeshStandardMaterial({
