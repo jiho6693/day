@@ -528,61 +528,9 @@ const fogcolor = 0xFFFFFF;
 const fogdensity = 0.0;
 
 //wether if
-fetch(url)
-  .then(response => response.json())
-  .then((data) => {
-    const weather = data.weather[0].main;
-    if(weather === "Clouds"|| weather === "a")
-	{     scene.add( cube );
-      
-    } else if(weather === "Rainy")
-	{ scene.add( cube );
-        // scene.fog = new THREE.Fog(0x11111f, 300, 600);
-		scene.add(stars);
-	}else if(weather === "night, Rainy")
-  {       
-
-    //rain
-
-    scene.add(stars);
-
-    //clouds
-
-    const loader = new THREE.TextureLoader();
-    const cloudVertices = [];
-    loader.load("./source/smoke.png", function(texture){
-
-      const cloudGeo = new THREE.PlaneGeometry(500,500);
-      const cloudMaterial = new THREE.MeshLambertMaterial({
-      map: texture,
-      transparent: true
-      });
-
-      for(let p=0; p<25; p++) {
-      let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
-      cloud.position.set(
-        Math.random()*800 -400,
-        500,
-        Math.random()*3000 - 450
-      );
-      cloud.rotation.x = 1.16;
-      cloud.rotation.y = -0.12;
-      cloud.rotation.z = Math.random()*360;
-      cloud.material.opacity = 0.3;
-      cloudVertices.push(cloud);
-      scene.add(cloud);
-      }})
+scene.add( cube );
       
     
-    //flash
-    const flash = new THREE.PointLight(0x062d89, 30, 500 ,1.7);
-    flash.position.set(200,300,100);
-    scene.add(flash);
-	}else {
-    scene.add(night)
-  }
-
-  })  
 
   function animate() {
 	const positions = starGeo.attributes.position.array;
